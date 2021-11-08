@@ -41,3 +41,34 @@ done <pops.txt
 Will in this case just print the content of the file `pops.txt` but can be combined endlessly
 By Rickard Hammarén
 
+
+#### Check if file exists and then do something with it
+```
+if [ -f $FILE ] ; then
+echo "$FILE exists"
+fi 
+```
+
+this can also be negated: 
+```
+if [ ! -f $FILE ] ; then
+echo "$FILE does not exist"
+fi 
+```
+
+##### similar statements: 
+```[ -s $FILE ]``` checks if file is non-empty
+
+```[ -z $VAR ]``` checks if variable exists/ is non-empty
+
+you can always negate them by adding a ``` ! ``` before the flag 
+
+I use this, for example, to check whether an output file was generated and then to delete intermediate input files.
+
+By Nina Hollfelder 
+
+#### delete empty files:
+
+```find . -size  0 -print -delete ```
+
+by Nina Hollfelder 
