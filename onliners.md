@@ -42,7 +42,7 @@ Will in this case just print the content of the file `pops.txt` but can be combi
 By Rickard Hammarén
 
 
-### Check if file exists and then do something with it
+#### Check if file exists and then do something with it
 ```
 if [ -f $FILE ] ; then
 echo "$FILE exists"
@@ -56,12 +56,19 @@ echo "$FILE does not exist"
 fi 
 ```
 
-#### similar statements: 
+##### similar statements: 
 ```[ -s $FILE ]``` checks if file is non-empty
+
 ```[ -z $VAR ]``` checks if variable exists/ is non-empty
+
 you can always negate them by adding a ``` ! ``` before the flag 
 
-I use this, for example, to check whether an output file was generated and then to delete intermediate input files. 
+I use this, for example, to check whether an output file was generated and then to delete intermediate input files.
 
 By Nina Hollfelder 
 
+#### delete empty files:
+
+```find . -size  0 -print -delete ```
+
+by Nina Hollfelder 
