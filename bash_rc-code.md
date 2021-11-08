@@ -1,4 +1,4 @@
-*Personalizing your profile
+*Personalizing your profile*
 
 Some code to search through your bash history. The way this works is that it looks for any command starting with the same letter(s) 
 as the ones you have typed by clicking on the up and down arrow keys. Say you want to look for previous awk commands, you start typing ```awk``` 
