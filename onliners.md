@@ -17,3 +17,13 @@ find -type f -iname *.bam -ls -exec file {} \
 ```
 By  Carolina Bernhardsson
 
+
+#### Read a file and have the variable in a loop be the line of the file:
+
+```
+while read p; do
+  echo $p
+done <pops.txt
+```
+Will in this case just print the content of the file `pops.txt` but can be combined endlessly
+By Rickard Hammarén
