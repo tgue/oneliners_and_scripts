@@ -56,7 +56,7 @@ echo "$FILE does not exist"
 fi 
 ```
 
-# similar statements: 
+#### similar statements: 
 ```[ -s $FILE ]``` checks if file is non-empty
 ```[ -z $VAR ]``` checks if variable exists/ is non-empty
 you can always negate them by adding a ``` ! ``` before the flag 
