@@ -72,3 +72,6 @@ By Nina Hollfelder
 ```find . -size  0 -print -delete ```
 
 by Nina Hollfelder 
+
+
+A large collection of useful bioinformatic oneliners can also be found at Stephen Turner's github:  https://github.com/stephenturner/oneliners
