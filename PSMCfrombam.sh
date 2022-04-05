@@ -46,12 +46,28 @@ module load  python/3.9.5
                           --mask=hs37d5_chr$chr.mask.bed.gz \
                           ${basefile}_chr${chr}.vcf.gz >$basefile.chr${chr}.multihetsep > $indid.chr$chr.multihetsep
 
-module load bioinfo-tools msmc
-
-msmc -r 0.88  -o $indid.output $indid.chr{1..22}.multihetsep
-
 EOF
 done
 done
 
+
+
+for bamfile in $(tail -n3 bamfiles)
+do
+indid=$(basename $bamfile | cut -d"." -f1 )
+basefile=$(basename $bamfile .fa.bam)
+
+sbatch <<EOF
+#!/bin/bash
+#SBATCH -A snic2022-22-101
+#SBATCH -p core
+#SBATCH -n 1
+#SBATCH -t 4-0:00:00
+#SBATCH -J msmc.${indid}_$chr
+#SBATCH -e msmc.${indid}_$chr.er
+module load bioinfo-tools msmc
+
+msmc -r 0.88  -o $indid.output $indid.chr{1..22}.multihetsep
+EOF
+done
 #by Nina Hollfelder
