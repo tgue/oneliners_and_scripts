@@ -44,7 +44,7 @@ module load  python/3.9.5
 
 ./generate_multihetsep.py --mask=${basefile}_chr${chr}_mask.bed.gz  \
                           --mask=hs37d5_chr$chr.mask.bed.gz \
-                          ${basefile}_chr${chr}.vcf.gz >$basefile.chr${chr}.multihetsep > $indid.chr$chr.multihetsep
+                          ${basefile}_chr${chr}.vcf.gz  > $indid.chr$chr.multihetsep
 
 EOF
 done
